@@ -1,23 +1,8 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               5.6.24 - MySQL Community Server (GPL)
--- Server OS:                    Win32
--- HeidiSQL Version:             9.2.0.4947
--- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
--- Dumping database structure for hittest
 DROP DATABASE IF EXISTS `hittest`;
-CREATE DATABASE IF NOT EXISTS `hittest` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE IF NOT EXISTS `hittest`;
 USE `hittest`;
 
-
--- Dumping structure for table hittest.articles
-DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `author_id` int(11) unsigned NOT NULL,
@@ -25,9 +10,6 @@ CREATE TABLE IF NOT EXISTS `articles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table hittest.articles: ~8 rows (approximately)
-DELETE FROM `articles`;
-/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` (`id`, `author_id`, `date_added`) VALUES
 	(1, 1, 1336465035),
 	(2, 3, 1336551435),
@@ -39,11 +21,7 @@ INSERT INTO `articles` (`id`, `author_id`, `date_added`) VALUES
 	(8, 3, 1337069835),
 	(9, 1, 1337156235),
 	(10, 3, 1337242635);
-/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 
-
--- Dumping structure for table hittest.articles_data
-DROP TABLE IF EXISTS `articles_data`;
 CREATE TABLE IF NOT EXISTS `articles_data` (
   `pid` int(10) NOT NULL,
   `status` int(3) NOT NULL,
@@ -51,9 +29,6 @@ CREATE TABLE IF NOT EXISTS `articles_data` (
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table hittest.articles_data: ~20 rows (approximately)
-DELETE FROM `articles_data`;
-/*!40000 ALTER TABLE `articles_data` DISABLE KEYS */;
 INSERT INTO `articles_data` (`pid`, `status`, `lang`, `content`) VALUES
 	(1, 0, 'en', '{"title":{"title":"Fantastic Four is Lorem ipsum dolor sit amet, consectetur adipiscing elit.","title_image":"images\\/title_images\\/fnf_title_image.jpg"},"body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus dui. Ut sollicitudin, ante sit amet vehicula egestas, lacus risus tempus elit, id pretium sapien lorem ut lectus. Sed sagittis neque at odio sollicitudin elementum. Proin at tellus ac dui porta bibendum. Sed nulla elit, tincidunt nec commodo vitae, porta sit amet nunc. Donec accumsan venenatis enim vel vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin consequat tincidunt. Praesent gravida faucibus convallis. Morbi sollicitudin, lectus sed bibendum tempor, massa massa imperdiet risus, at porta felis eros ut tortor. Ut eget fermentum libero. In ultrices urna in massa venenatis ullamcorper eu a tortor. Maecenas fringilla erat eget metus eleifend egestas iaculis nibh pellentesque.","url":"\\/article-1"}'),
 	(1, 2, 'ru', '{"title":{"title":"Russian content Fantastic Four is Lorem ipsum dolor sit amet, consectetur adipiscing elit.","title_image":"images\\/title_images\\/fnf_title_image.jpg"},"body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus dui. Ut sollicitudin, ante sit amet vehicula egestas, lacus risus tempus elit, id pretium sapien lorem ut lectus. Sed sagittis neque at odio sollicitudin elementum. Proin at tellus ac dui porta bibendum. Sed nulla elit, tincidunt nec commodo vitae, porta sit amet nunc. Donec accumsan venenatis enim vel vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin consequat tincidunt. Praesent gravida faucibus convallis. Morbi sollicitudin, lectus sed bibendum tempor, massa massa imperdiet risus, at porta felis eros ut tortor. Ut eget fermentum libero. In ultrices urna in massa venenatis ullamcorper eu a tortor. Maecenas fringilla erat eget metus eleifend egestas iaculis nibh pellentesque.","url":"\\/article-1"}'),
@@ -75,25 +50,15 @@ INSERT INTO `articles_data` (`pid`, `status`, `lang`, `content`) VALUES
 	(9, 1, 'ru', '{"title":{"title":"Russian content Iron Man is Lorem ipsum dolor sit amet, consectetur adipiscing elit.","title_image":"images\\/title_images\\/ironman_title_image.jpg"},"body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus dui. Ut sollicitudin, ante sit amet vehicula egestas, lacus risus tempus elit, id pretium sapien lorem ut lectus. Sed sagittis neque at odio sollicitudin elementum. Proin at tellus ac dui porta bibendum. Sed nulla elit, tincidunt nec commodo vitae, porta sit amet nunc. Donec accumsan venenatis enim vel vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin consequat tincidunt. Praesent gravida faucibus convallis. Morbi sollicitudin, lectus sed bibendum tempor, massa massa imperdiet risus, at porta felis eros ut tortor. Ut eget fermentum libero. In ultrices urna in massa venenatis ullamcorper eu a tortor. Maecenas fringilla erat eget metus eleifend egestas iaculis nibh pellentesque.","url":"\\/article-9"}'),
 	(10, 0, 'en', '{"title":{"title":"Pink Panter is Lorem ipsum dolor sit amet, consectetur adipiscing elit.","title_image":"images\\/title_images\\/pink_title_image.jpg"},"body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus dui. Ut sollicitudin, ante sit amet vehicula egestas, lacus risus tempus elit, id pretium sapien lorem ut lectus. Sed sagittis neque at odio sollicitudin elementum. Proin at tellus ac dui porta bibendum. Sed nulla elit, tincidunt nec commodo vitae, porta sit amet nunc. Donec accumsan venenatis enim vel vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin consequat tincidunt. Praesent gravida faucibus convallis. Morbi sollicitudin, lectus sed bibendum tempor, massa massa imperdiet risus, at porta felis eros ut tortor. Ut eget fermentum libero. In ultrices urna in massa venenatis ullamcorper eu a tortor. Maecenas fringilla erat eget metus eleifend egestas iaculis nibh pellentesque.","url":"\\/article-10"}'),
 	(10, 0, 'ru', '{"title":{"title":"Russian content Pink Panter is Lorem ipsum dolor sit amet, consectetur adipiscing elit.","title_image":"images\\/title_images\\/pink_title_image.jpg"},"body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus dui. Ut sollicitudin, ante sit amet vehicula egestas, lacus risus tempus elit, id pretium sapien lorem ut lectus. Sed sagittis neque at odio sollicitudin elementum. Proin at tellus ac dui porta bibendum. Sed nulla elit, tincidunt nec commodo vitae, porta sit amet nunc. Donec accumsan venenatis enim vel vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin consequat tincidunt. Praesent gravida faucibus convallis. Morbi sollicitudin, lectus sed bibendum tempor, massa massa imperdiet risus, at porta felis eros ut tortor. Ut eget fermentum libero. In ultrices urna in massa venenatis ullamcorper eu a tortor. Maecenas fringilla erat eget metus eleifend egestas iaculis nibh pellentesque.","url":"\\/article-10"}');
-/*!40000 ALTER TABLE `articles_data` ENABLE KEYS */;
 
 
--- Dumping structure for table hittest.authors
-DROP TABLE IF EXISTS `authors`;
 CREATE TABLE IF NOT EXISTS `authors` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table hittest.authors: ~3 rows (approximately)
-DELETE FROM `authors`;
-/*!40000 ALTER TABLE `authors` DISABLE KEYS */;
 INSERT INTO `authors` (`id`, `name`) VALUES
 	(1, 'Don Jones'),
 	(2, 'Jack Sparrow'),
 	(3, 'Griffin Bryson');
-/*!40000 ALTER TABLE `authors` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
